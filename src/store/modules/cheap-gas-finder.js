@@ -22,7 +22,10 @@ const getters = {
 
 }
 
+export const STORE_CHEAP_GAS_FINDER = 'cheapGasFinder'
+
 export default {
+  namespaced: true,
   state,
   actions,
   getters,

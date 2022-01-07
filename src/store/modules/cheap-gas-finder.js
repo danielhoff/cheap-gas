@@ -61,6 +61,11 @@ const getters = {
   * @param stationList - full station list from API
   */
   filterStationList: (state, getters) => (stationList) => {
+    // removed null prices from list if user is sorting by price
+    if (getters.getSort === 'price') {
+      stationList = stationList.filter(station => station.price !== null)
+    }
+
     // checks if list needs to be filtered by brand
     if (getters.getBrand !== 'all') {
       stationList = stationList.filter(station => station.brand === getters.getBrand)

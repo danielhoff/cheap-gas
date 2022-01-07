@@ -1,9 +1,9 @@
 <template>
-  <ul>
-      <li v-for="station in getStationList" :key="station.id">
-          <result-listing :station="station"></result-listing>
-      </li>
-  </ul>
+    <div class="results-listing--container">
+        <div v-for="station in getStationList" :key="station.id">
+            <result-listing :station="station" :fuelType="getFuelType"></result-listing>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
     ResultListing
   },
   computed: {
-    ...mapGetters(STORE_CHEAP_GAS_FINDER, ['getStationList'])
+    ...mapGetters(STORE_CHEAP_GAS_FINDER, ['getStationList', 'getFuelType'])
   }
 }
 </script>

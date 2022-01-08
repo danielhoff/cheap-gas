@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Petrol station finder</h1>
     <user-params @userSearchParams="getStationData"></user-params>
     <results-list></results-list>
   </div>
@@ -42,3 +43,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  h1 {
+    text-align: center;
+  }
+</style>

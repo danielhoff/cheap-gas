@@ -1,5 +1,5 @@
 <template>
-    <el-form :inline="true" :model="userSearchParams" class="demo-form-inline">
+    <el-form class="user-params-form" label-position="top" label-width="5rem" :model="userSearchParams">
         <el-form-item label="Latitude">
             <el-input v-model="userSearchParams.lat" placeholder="Latitude"></el-input>
         </el-form-item>
@@ -77,6 +77,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    .user-params-form {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 35rem;
+        margin: 0 auto;
 
+        .el-form-item {
+            width: 40%;
+            padding: 0 1rem;
+        }
+    }
 </style>

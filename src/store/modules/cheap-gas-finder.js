@@ -67,7 +67,7 @@ const getters = {
     }
 
     // checks if list needs to be filtered by brand
-    if (getters.getBrand !== 'all') {
+    if (getters.getBrand !== 'all' && getters.getBrand !== null) {
       stationList = stationList.filter(station => station.brand === getters.getBrand)
     }
 
@@ -79,10 +79,12 @@ const getters = {
     return stationList
   },
   /**
-  * Returns the list of petrol stations
+  * Returns the list of petrol stations - runs through the filtering as an extra check
   * @param state
   */
-  getStationList: state => state.stationList,
+  getStationList: (state, getters) => {
+    return getters.filterStationList(state.stationList)
+  },
   /**
   * Returns the users brand choice
   * @param state

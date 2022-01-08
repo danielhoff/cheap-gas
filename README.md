@@ -2,9 +2,9 @@
 Mobile site to filter german petrol stations based on location, price, distance, brand, fuel type and if the station is open.
 
 ## Tech stack
-Vue.js
-Scss
-Jest
+Vue.js -
+Scss -
+Jest -
 Vue CLI
 
 ## Project setup
